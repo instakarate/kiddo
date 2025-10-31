@@ -31,6 +31,62 @@ module.exports = (env, argv) => ({
     new HtmlWebpackPlugin({
       title: 'Karate Kido Game',
       inject: 'body',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0',
+        description: 'Karate Kido - Action Fighting Game'
+      },
+      templateContent: `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Karate Kido - Action Fighting Game">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background: #222;
+      height: 100%;
+      overflow: hidden;
+    }
+    #game-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #loading-screen {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: #222;
+      color: #fff;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    canvas {
+      display: block;
+      margin: 0 auto;
+      max-width: 100vw;
+      max-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading-screen">Loading Karate Kido...</div>
+  <div id="game-container"></div>
+  <script>
+    window.onload = function() {
+      document.getElementById('loading-screen').style.display = 'none';
+    };
+  </script>
+</body>
+</html>`,
     }),
   ],
   devServer: {
