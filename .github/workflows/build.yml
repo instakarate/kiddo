@@ -1,5 +1,4 @@
 name: Build and Deploy Karate Kido Game
-
 on:
   push:
     branches:
@@ -7,26 +6,20 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-
     - name: Install dependencies
-      run: npm ci
-
+      run: npm install
     - name: Build project
       run: npm run build
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
