@@ -29,7 +29,7 @@ module.exports = (env, argv) => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      title: 'Karate Kido Game',
       inject: 'body',
     }),
   ],
