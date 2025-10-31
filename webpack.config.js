@@ -31,15 +31,11 @@ module.exports = (env, argv) => ({
     new HtmlWebpackPlugin({
       title: 'Karate Kido Game',
       inject: 'body',
-      meta: {
-        viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0',
-        description: 'Karate Kido - Action Fighting Game'
-      },
       templateContent: `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%= htmlWebpackPlugin.options.title %></title>
+  <title>Karate Kido Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="description" content="Karate Kido - Action Fighting Game">
   <style>
