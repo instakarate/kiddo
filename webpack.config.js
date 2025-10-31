@@ -1,7 +1,6 @@
 // webpack.config.js
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = (env, argv) => ({
   entry: './src/main.js',
   output: {
@@ -21,7 +20,6 @@ module.exports = (env, argv) => ({
     new HtmlWebpackPlugin({
       template: 'index.html',
       inject: 'body',
-      favicon: 'assets/images/favicon.ico',
     }),
   ],
   devServer: {
